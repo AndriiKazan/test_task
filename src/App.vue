@@ -2,7 +2,7 @@
   <router-view/>
 </template>
 <script>
-  import vacancy from "@/components/Users/users";
+  import vacancy from "@/components/Vacancy/Vacancy";
   export default {
     components:{
       vacancy

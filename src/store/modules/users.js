@@ -2,26 +2,44 @@ import axios from 'axios'
 
 export default {
     actions:{
-        getUsers(ctx, url){
+        getAllVacancy(ctx, url){
             axios
                 .get(url)
                 .then(function (response){
-                    ctx.commit("saveUsers", response.data);
+                    ctx.commit("saveAllVacancy", response.data.objects);
                 })
                 .catch(error => (console.error("Something wrong!!!")))
         },
+        getVacancyById(ctx, url){
+            axios
+                .get(url)
+                .then(function (response){
+                    ctx.commit("saveVacancyById", response.data.object);
+                })
+                .catch(error => (console.error("Something wrong!!!")))
+        }
     },
     mutations:{
-        saveUsers(state, data){
-            state.users = data;
+        saveAllVacancy(state, data){
+            state.allVacancy = data;
+        },
+        saveVacancyById(state, data){
+            state.vacancyById = data;
+        },
+        deleteVacancyById(state){
+            state.vacancyById = {};
         }
     },
     state:{
-        users:[]
+        allVacancy:[],
+        vacancyById: {}
     },
     getters:{
-        users(state){
-            return state.users;
+        allVacancy(state){
+            return state.allVacancy;
+        },
+        vacancyById(state){
+            return state.vacancyById;
         }
     }
 }

@@ -1,14 +1,14 @@
-import Users from "@/components/Users/users";
-import userInfo from "@/components/Users/userInfo";
+import Vacancy from "@/components/Vacancy/Vacancy";
+import vacancyDetail from "@/components/Vacancy/vacancyDetail";
 export default [
     {
         path: '/',
-        name: 'Users',
-        component: Users
+        name: 'allVacancy',
+        component: Vacancy
     },
     {
-        path: '/userInfo/:id',
-        name: 'userInfo',
-        component: userInfo
+        path: '/vacancyDetail/:id',
+        name: 'vacancyDetail',
+        component: vacancyDetail
     }
 ]

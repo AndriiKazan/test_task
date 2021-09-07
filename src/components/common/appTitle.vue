@@ -16,7 +16,7 @@ export default {
     color: white;
     text-align: center;
     letter-spacing: 1.5px;
-    background-color: #1d1c1c;
-    border-bottom: 2px solid #171616;
+    background-color: #1d1d1d;
+    border-bottom: 2px solid #292929;
   }
 </style>
