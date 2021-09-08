@@ -61,9 +61,6 @@
 
 <script>
 export default {
-  beforeCreate() {
-    console.log(this.vacancy);
-  },
   props:['vacancy', 'isFullVisible'],
   name: "vacancyMainInfo"
 }
