@@ -1,52 +1,16 @@
 <template>
-  <router-link :to="{name: 'vacancyDetail', params:{id:vacancy.localId}}">
-    <div class="vacancy">
-      <div class="section">
-        <div class="row">
-          <div>Position:</div>
-          <div class="data">{{vacancy.position}}</div>
-        </div>
-        <div class="row" v-if="vacancy.employmentType">
-          <div>Employment type:</div>
-          <div class="data">{{vacancy.employmentType}}</div>
-        </div>
-        <div class="row" v-if="vacancy.status">
-          <div>Status:</div>
-          <div class="data">{{vacancy.status}}</div>
-        </div>
-        <div class="row" v-if="vacancy.experience">
-          <div>Experience:</div>
-          <div class="data">{{vacancy.experience}}</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="row" v-if="vacancy.role">
-          <div>Role:</div>
-          <div class="data">{{vacancy.role}}</div>
-        </div>
-        <div class="row" v-if="vacancy.salaryFrom">
-          <div>Salary from:</div>
-          <div class="data">{{vacancy.salaryFrom}}</div>
-        </div>
-        <div class="row" v-if="vacancy.salaryTo">
-          <div>Salary to:</div>
-          <div class="data">{{vacancy.salaryTo}}</div>
-        </div>
-        <div class="row" v-if="vacancy.currency">
-          <div>currency:</div>
-          <div class="data">{{vacancy.currency}}</div>
-        </div>
-      </div>
+    <div>
+      <vacancyMainInfo :vacancy="vacancy" :is-full-visible="false"></vacancyMainInfo>
     </div>
-  </router-link>
 </template>
 
 
 <script>
+import vacancyMainInfo from "@/components/Vacancy/vacancyMainInfo";
 export default {
   props:["vacancy"],
-  name: "vacancyListItem"
+  name: "vacancyListItem",
+  components:{vacancyMainInfo}
 }
 </script>
 
@@ -68,20 +32,4 @@ export default {
     color: #f1f1f1;
   }
 
-  .section{
-    width: 400px;
-  }
-  .section:nth-child(2){
-    width: 200px;
-    padding-left: 20px;
-  }
-  .row{
-    display: flex;
-  }
-  .section .row{
-    margin-bottom: 10px;
-  }
-  .data{
-    margin-left: 10px;
-  }
 </style>

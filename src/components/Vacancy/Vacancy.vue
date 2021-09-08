@@ -2,7 +2,10 @@
   <div>
     <appTitle v-bind:appTitle="title"></appTitle>
     <div class="content">
-      <userListItem v-for="item in allVacancy" v-bind:vacancy="item" :key="item.orgId"></userListItem>
+      <router-link :to="{name: 'vacancyDetail', params:{id:item.localId}}"
+                   v-for="item in allVacancy" v-bind:vacancy="item" :key="item.orgId">
+        <userListItem  v-bind:vacancy="item"></userListItem>
+      </router-link>
     </div>
   </div>
 </template>
