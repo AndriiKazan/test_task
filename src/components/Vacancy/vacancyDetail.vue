@@ -33,7 +33,7 @@ export default {
   },
   data(){
     return{
-      url:"http://134.249.157.192/api/cleverstaff.net/hr/public/getVacancy?host=&id=",
+      url:"http://localhost:8080/hr/public/getVacancy?host=&id=",
       appTitle: "Vacancy detail"
     }
   },

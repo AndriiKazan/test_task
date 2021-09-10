@@ -24,7 +24,7 @@ export default {
   data(){
     return{
       title: "Vacancy list",
-      url: "http://134.249.157.192/api/cleverstaff.net/hr/public/getVacancies?alias=staffingpartner"
+      url: "http://localhost:8080/hr/public/getVacancies?alias=staffingpartner"
       // url: "https://jsonplaceholder.typicode.com/users"
     }
   },
